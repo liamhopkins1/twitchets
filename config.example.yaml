@@ -27,7 +27,7 @@ global:
   # Full list of regions can be seen here:
   # https://github.com/ahobsonsayers/twigots/blob/main/location.go#L79-L90
   regions:
-  -GBSC
+  - GBSC
 
   # How similar the event name in the ticket listing must be to the one you specified.
   # Defaults to 0.85 if not set, allowing for naming inconsistencies.  # Between 0-1
