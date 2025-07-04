@@ -1,0 +1,59 @@
+apiKey: "2e7f0cb4e84543e1bfbf74984f0f2cd0" # REQUIRED: See README.md for details on how to obtain.
+
+country: GB # Currently only GB is supported
+
+# Configure your notification services.
+# Delete the ones you do not need.
+notification:
+  ntfy:
+    url: "https://ntfy.sh"
+    topic: "oasisTickets"
+    username: ""
+    password: ""
+  telegram:
+    token: <your telegram api token>
+    chatId: <your telegram chat id>
+  gotify:
+    url: <your gotify url>
+    token: <your gotify api token>
+
+# Global configuration that applies to all tickets.
+# These can be overridden on a ticket-by-ticket basis (see below).
+# The below are examples of all global configuration settings.
+# Remove the settings you do not need.
+global:
+  # Regions which ticket listings must be in.
+  # Defaults to all regions if not set.
+  # Full list of regions can be seen here:
+  # https://github.com/ahobsonsayers/twigots/blob/main/location.go#L79-L90
+  regions:
+  - GBSC
+
+  # How similar the event name in the ticket listing must be to the one you specified.
+  # Defaults to 0.85 if not set, allowing for naming inconsistencies.  # Between 0-1
+  # Between 0-1
+  eventSimilarity: 0.85
+
+  # How many tickets must be in the listing.
+  # Defaults to any number of tickets if not set.
+  numTickets: 2
+
+  # Minimum discount (including fees) of the tickets in the listing against the original price.
+  # Defaults to any discount if not set.
+  discount: 
+
+  # Notification services to send found ticket listings to.
+  # Defaults to all configured services above.
+  notification:
+    - ntfy
+
+# Ticket configuration.
+# Settings set here take priority over global settings.
+# If a setting is not set/specified here, the global setting will be used.
+# To unset a global setting and use the default, set it to a negative value or an empty list, depending on the type.
+# The below are examples. Tweak them as needed.
+tickets:
+  # Look for Oasis tickets (mostly) using the global configuration.
+  # Notifications will be sent to all configured notification services.
+  - event: Oasis # REQUIRED
+    notification: []
