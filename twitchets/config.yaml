@@ -10,12 +10,6 @@ notification:
     topic: "oasisTickets"
     username: ""
     password: ""
-  telegram:
-    token: <your telegram api token>
-    chatId: <your telegram chat id>
-  gotify:
-    url: <your gotify url>
-    token: <your gotify api token>
 
 # Global configuration that applies to all tickets.
 # These can be overridden on a ticket-by-ticket basis (see below).
