@@ -11,7 +11,7 @@ FROM alpine:latest
 
 RUN apk add --no-cache libc6-compat
 
-COPY --from=builder /twitchets/bin/twitchets /usr/bin/twitchets
+COPY --from=builder /twitchets/bin/twitchets /twitchets/twitchets
 COPY config.yaml /twitchets/config.yaml
 
 WORKDIR /twitchets
